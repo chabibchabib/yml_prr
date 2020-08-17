@@ -1,0 +1,9 @@
+<?xml version="1.0" ?>
+<component type="abstract" name="prodRitz"> 	
+<params>
+<param name="Vm" type="Matrix" mode="in" />
+<param name="res" type="Matrix" mode="in" />
+<param name="vec" type="Matrix" mode="out" />
+
+</params>
+</component>

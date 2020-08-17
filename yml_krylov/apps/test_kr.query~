@@ -1,0 +1,19 @@
+<?xml version="1.0"?>
+<application name="test_kr">
+<graph>
+kmax:=; 
+
+
+seq (i:=1; kmax)
+do
+
+compute init(A,x);
+compute krylov(A,x,c,Vm);
+compute sousEspace(c,res);
+compute prodRitz(Vm,res,vec);
+compute erreur(A,vec,res,err);
+
+
+enddo
+</graph>
+</application>

@@ -1,0 +1,127 @@
+<?xml version="1.0"?>
+<component type="impl" name="erreur" abstract="erreur">
+<impl lang="XMP" nodes="CPU:(1,2)">
+  <templates>
+    <template name="t" format="block,block" size="6,6"/>
+  </templates>
+  <distribute>
+    <param template="t" name="A(6,6)" align="[i][j]:(j,i)"/>
+    <param template="t" name="vec(6,6)" align="[i][j]:(j,i)"/>
+    <param template="t" name="res(4,6)" align="[*][j]:(j,*)"/>
+
+  </distribute>		
+<header>
+<![CDATA[
+double Id[6][6];
+#pragma xmp align Id[i][j] with t(j,i)
+double M[6][6];
+#pragma xmp align M[i][j] with t(j,i)
+double tmp1[6];
+#pragma xmp align tmp1[i] with t(*,i)
+
+double tmp2[6];
+#pragma xmp align tmp2[j] with t(j,*)
+double erreur[6];
+#pragma xmp align erreur[j] with t(j,*)
+]]>
+</header>
+  <source>
+<![CDATA[
+int  n =6; int m=3; int r=1;
+double sum=0; 
+	
+	//INITIALIATION Id
+  #pragma xmp loop (i,j) on t(j,i)
+  for (int i=0;i<n;i++){
+    for(int j=0;j<n;j++){
+	Id[i][j]=0;
+	if(i==j) Id[i][j]=1;
+
+    	}
+  }	
+	
+		// Calcul
+for (int k=0; k<m;k++)
+{
+#pragma xmp gmove
+tmp2[:]=vec[:][k];
+#pragma xmp loop (i,j) on t(j,i) 
+for(int i=0;i<n;i++){
+for(int j=0;j<n;j++){
+M[i][j]=A[i][j]-res[0][k]*Id[i][j];
+}}
+#pragma xmp loop (i,j) on t(j,i) reduction(+:sum)
+for(int i=0;i<n;i++){
+for(int j=0;j<n;j++){
+sum=sum+M[i][j]*tmp2[j];
+
+}
+tmp1[i]=sum;
+sum=0.0;
+}
+sum=0.0;
+#pragma xmp loop (i) on t(*,i) reduction(+:sum)
+for (int i=0;i<n;i++){
+sum=sum+tmp1[i]*tmp1[i];
+}
+
+
+erreur[k]=sqrt(sum);
+sum=0.0;
+}// end k 
+ //afffichage
+#pragma xmp task on _XMP_default_nodes(1,1)
+{
+for(int i=0;i<m;i++) printf("%f\t",erreur[i]);
+printf("\n");
+} // end task 
+
+double norme_A=0.0;
+#pragma xmp loop (i,j) on t(j,i) reduction(+:norme_A)
+for (int i=0;i<n;i++){
+for (int j=0;j<n;j++){
+norme_A=norme_A+A[i][j]*A[i][j];
+}}
+norme_A=sqrt(norme_A);
+for (int i=0;i<m;i++){
+erreur[i]=erreur[i]/norme_A;
+}
+ //afffichage
+#pragma xmp task on _XMP_default_nodes(1,1)
+{
+for(int i=0;i<m;i++) printf("%f\t",erreur[i]);
+printf("\n norme: %f\n",norme_A);
+printf("\n");
+} // end task 
+int PMAX; double aide;
+	 for (int i=0; i<m-1;i++){
+    // Recherche du max à droite de module[i]
+    PMAX=i;
+    for (int j=i+1;j<m;j++)
+      if (fabs(erreur[j])>fabs(erreur[PMAX])) PMAX=j;
+    // Echange de module[i] avec le max
+    aide=erreur[i];
+    erreur[i]=erreur[PMAX];
+    erreur[PMAX]=aide;
+  }
+ //afffichage
+#pragma xmp task on  _XMP_default_nodes(1,1)  
+{
+for(int i=0;i<m;i++) printf("%f\t",erreur[i]);
+//printf("\n norme: %f\n",norme_A);
+printf("\n");
+}
+aide=0;
+for (int i=0; i<r;i++) aide+=erreur[i];
+#pragma xmp task on  _XMP_default_nodes(1,1)  
+{
+printf("\n ERR: %f\n",aide);
+
+}	 
+err=aide;
+]]>
+  </source>
+<footer />
+</impl>
+</component>
+

@@ -1,0 +1,17 @@
+Task 1: Ready
+----------------------------------------
+Task 1: Finished
+
+Task 1: SUCCESS
+component   : init (pid=31280)
+start   time: Mon Aug 17 10:45:55 2020
+              (1597653955.881152)
+nprocs = 2
+host 0 ymlvm 127.0.1.1
+host 1 ymlvm 127.0.1.1
+end     time: Mon Aug 17 10:45:55 2020
+              (1597653955.901489)
+elasped time: 0.020337
+elasped time body: 0.001102
+
+----------------------------------------

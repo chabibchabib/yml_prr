@@ -1,0 +1,7 @@
+<?xml version="1.0"?>
+<application name="test1">
+<graph>
+
+compute krylov(A,x,c,Vm);
+</graph>
+</application>

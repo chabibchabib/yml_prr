@@ -1,0 +1,17 @@
+Task 1: Ready
+----------------------------------------
+Task 1: Finished
+
+Task 1: SUCCESS
+component   : prodRitz (pid=4255)
+start   time: Thu Aug 13 12:34:03 2020
+              (1597314843.515747)
+nprocs = 2
+host 0 ymlvm 127.0.1.1
+host 1 ymlvm 127.0.1.1
+end     time: Thu Aug 13 12:34:03 2020
+              (1597314843.552189)
+elasped time: 0.036442
+elasped time body: 0.001851
+
+----------------------------------------

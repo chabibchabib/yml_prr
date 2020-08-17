@@ -1,0 +1,62 @@
+<?xml version="1.0"?>
+<component type="impl" name="prodRitz" abstract="prodRitz">
+<impl lang="XMP" nodes="CPU:(1,2)">
+  <templates>
+    <template name="t" format="block,block" size="6,6"/>
+  </templates>
+  <distribute>
+
+    <param template="t" name="res(4,6)" align="[*][j]:(j,*)"/>
+    <param template="t" name="Vm(6,3)" align="[i][*]:(*,i)"/>
+    <param template="t" name="vec(6,3)" align="[i][*]:(*,i)"/>
+  </distribute>		
+<header>
+<![CDATA[
+
+]]>
+</header>
+  <source>
+<![CDATA[
+int n,m;
+ n=6; m=3;
+double sum=0.0;
+	
+		// Calcul
+#pragma xmp loop (i,j) on t(j,i) reduction(+:sum)
+for(int i=0;i<n;i++){
+for(int j=0;j<m;j++){
+sum=0;
+for(int k=0;k<m;k++){
+				sum+=Vm[i][k]*res[k+1][j];
+ vec[i][j]=sum;   					}
+}}
+	  //afffichage
+#pragma xmp task on _XMP_default_nodes(1,1)  
+{
+for(int i=0;i<n;i++){ 
+printf("\n");
+for (int j =0; j<m;j++){
+printf("%f\t",vec[i][j]);
+}
+
+}
+printf("\n");
+} // end task 
+
+/*#pragma xmp task on  _XMP_default_nodes(1,1)
+{
+for (int i=0; i<n;i++) printf("yy: %f\n",yy_1[i]);
+for (int i=0; i<2*m;i++) printf("c %f \n",c[i]);
+//for (int i=0; i<n;i++){ printf("\n");
+//for (int j=0;j<m;j++){printf(" %f\t",Vm[i][j]);
+//}}
+printf("\n");
+} //end task*/			  
+
+
+]]>
+  </source>
+<footer />
+</impl>
+</component>
+

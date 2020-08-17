@@ -1,0 +1,7 @@
+<?xml version="1.0"?>
+<application name="test4">
+<graph>
+
+compute prodRitz(Vm,res,vec);
+</graph>
+</application>

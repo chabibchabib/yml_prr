@@ -1,0 +1,17 @@
+Task 1: Ready
+----------------------------------------
+Task 1: Finished
+
+Task 1: SUCCESS
+component   : erreur (pid=450)
+start   time: Thu Aug 13 11:40:38 2020
+              (1597311638.844194)
+nprocs = 2
+host 0 ymlvm 127.0.1.1
+host 1 ymlvm 127.0.1.1
+end     time: Thu Aug 13 11:40:38 2020
+              (1597311638.890584)
+elasped time: 0.046390
+elasped time body: 0.042276
+
+----------------------------------------

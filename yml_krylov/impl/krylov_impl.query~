@@ -1,0 +1,138 @@
+<?xml version="1.0"?>
+<component type="impl" name="krylov" abstract="krylov">
+<impl lang="XMP" nodes="CPU:(1,2)">
+  <templates>
+    <template name="t" format="block,block" size="6,6"/>
+  </templates>
+  <distribute>
+    <param template="t" name="A(6,6)" align="[i][j]:(j,i)"/>
+    <param template="t" name="Vm(6,6)" align="[i][j]:(j,i)"/>
+    <param template="t" name="x(6)" align="[i]:(*,i)"/>
+    <param template="t" name="c(6)" align="[j]:(j,*)"/>
+  </distribute>		
+<header>
+<![CDATA[
+double y_0[6];
+#pragma xmp align y_0[i] with t(*,i)
+double y_1[6];
+#pragma xmp align y_1[i] with t(*,i)
+	// vecteurs connus par tous les processeurs 
+double yy_0[6];
+#pragma xmp align yy_0[j] with t(j,*)
+double yy_1[6];                      // Pour afficher 
+#pragma xmp align yy_1[j] with t(j,*)
+]]>
+</header>
+  <source>
+<![CDATA[
+int n,m;
+ n=6; m=2;
+double sum=0; 
+
+	// ETAPE1: normalisation de x;
+c[0]=1;
+#pragma xmp loop (i) on t(j,i) reduction(+:sum)
+    			for(int i=0;i<n;i++){
+				sum+=x[i]*x[i];
+    					}
+sum=sqrt(sum);
+  			
+#pragma xmp loop (i) on t(*,i)
+    for(int i=0;i<n;i++){
+			y_0[i]=x[i]/sum;
+    				}
+// colonne 0 de Vm
+#pragma xmp loop (i) on t(*,i)
+    for(int i=0;i<n;i++){
+			Vm[i][0]=y_0[i];
+    				}
+
+
+	// ETAPE 2: y_1=A*y_0
+#pragma xmp gmove
+ yy_0[:]=y_0[:];
+#pragma xmp loop (i) on t(*,i) reduction(+:sum)
+  for (int i=0;i<n;i++){
+			sum=0;
+ 			 #pragma xmp loop (j) on t(j,*)
+    			for(int j=0;j<n;j++){
+				sum+=A[i][j]*yy_0[j];
+    					}
+			y_1[i]=sum;
+  			}
+
+
+	// ETAPE 3: Boucle 
+for (int k=1; k<m;k++){
+			// etape 3.1 C(2k-1)=(y_k,y_(k-1))	
+			sum=0;
+
+			#pragma xmp loop (i) on t(j,i) reduction(+:sum)
+    			for(int i=0;i<n;i++){
+				sum+=y_0[i]*y_1[i];
+    					}
+			c[2*k-1]=sum;
+			// etape 3.2 C(2k)=(y_k,y_k)	
+			sum=0;
+
+			#pragma xmp loop (i) on t(j,i) reduction(+:sum)
+    			for(int i=0;i<n;i++){
+				sum+=y_1[i]*y_1[i];
+    					}
+			c[2*k]=sum;
+
+			// etape 3.3 mise à jour
+			#pragma xmp loop (i) on t(j,i) 
+			for(int i=0;i<n;i++){
+				y_0[i]=y_1[i];
+    					}
+			// etape 3.4 y_k+1=A*y_k
+			#pragma xmp gmove
+			yy_0[:]=y_1[:];
+			  // colonne k de Vm
+			#pragma xmp loop (i) on t(j,i)
+    			for(int i=0;i<n;i++){
+			Vm[i][k]=y_1[i];
+    				}
+			#pragma xmp loop (i) on t(*,i) reduction(+:sum)
+  			for (int i=0;i<n;i++){
+				sum=0;
+ 			 	#pragma xmp loop (j) on t(j,*)
+    				for(int j=0;j<n;j++){
+					sum+=A[i][j]*yy_0[j];
+    					}
+				y_1[i]=sum;
+  			}
+
+
+} // fin boucle k 
+
+	// Etape 4: calcul C(2m-1)
+sum=0;
+#pragma xmp loop (i) on t(j,i) reduction(+:sum)
+    			for(int i=0;i<n;i++){
+				sum+=y_0[i]*y_1[i];
+    					}
+			c[2*m-1]=sum;
+ 
+	//Affichage des résultats
+#pragma xmp gmove
+ yy_1[:]=y_1[:];
+
+#pragma xmp task on  _XMP_default_nodes(1,1)
+{
+for (int i=0; i<n;i++) printf("yy: %f\n",yy_1[i]);
+for (int i=0; i<2*m;i++) printf("c %f \n",c[i]);
+//for (int i=0; i<n;i++){ printf("\n");
+//for (int j=0;j<m;j++){printf(" %f\t",Vm[i][j]);
+//}}
+printf("\n");
+} //end task			  
+
+
+]]>
+  </source>
+<footer />
+</impl>
+</component>
+

@@ -1,0 +1,13 @@
+for i in `ls *.query`
+do
+yml_compiler $i
+done
+
+omrpc-register-yml *yapp | grep ^test > stubs
+echo "" >> stubs
+cp stubs  ~/.omrpc_registry
+cp hosts ~/.omrpc_registry/nodes
+#cp mpi.xcf ../../etc/yml/
+#cat stubs
+ #mpirun -n 2 -machinefile ./hosts yml_scheduler test4.query.yapp
+mpirun -n 1 yml_scheduler ./test4.query.yapp

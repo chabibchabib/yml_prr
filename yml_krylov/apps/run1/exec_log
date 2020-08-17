@@ -1,0 +1,420 @@
+Task 1: Ready
+----------------------------------------
+Task 1: Finished
+
+Task 1: SUCCESS
+component   : init (pid=2824)
+start   time: Mon Aug 17 16:23:59 2020
+              (1597674239.855140)
+nprocs = 2
+host 0 ymlvm 127.0.1.1
+host 1 ymlvm 127.0.1.1
+end     time: Mon Aug 17 16:23:59 2020
+              (1597674239.889253)
+elasped time: 0.034113
+elasped time body: 0.008845
+
+----------------------------------------
+Task 2: Ready
+----------------------------------------
+Task 2: Finished
+
+Task 2: SUCCESS
+component   : krylov (pid=2824)
+start   time: Mon Aug 17 16:23:59 2020
+              (1597674239.974401)
+nprocs = 2
+host 0 ymlvm 127.0.1.1
+host 1 ymlvm 127.0.1.1
+end     time: Mon Aug 17 16:24:00 2020
+              (1597674240.013148)
+elasped time: 0.038747
+elasped time body: 0.018029
+
+----------------------------------------
+Task 3: Ready
+----------------------------------------
+Task 3: Finished
+
+Task 3: SUCCESS
+component   : sousEspace (pid=2833)
+start   time: Mon Aug 17 16:24:00 2020
+              (1597674240.298617)
+nprocs = 1
+host 0 ymlvm 127.0.1.1
+end     time: Mon Aug 17 16:24:00 2020
+              (1597674240.318024)
+elasped time: 0.019407
+elasped time body: 0.018254
+
+----------------------------------------
+Task 4: Ready
+----------------------------------------
+Task 4: Finished
+
+Task 4: SUCCESS
+component   : prodRitz (pid=2824)
+start   time: Mon Aug 17 16:24:00 2020
+              (1597674240.403242)
+nprocs = 2
+host 0 ymlvm 127.0.1.1
+host 1 ymlvm 127.0.1.1
+end     time: Mon Aug 17 16:24:00 2020
+              (1597674240.507064)
+elasped time: 0.103822
+elasped time body: 0.000044
+
+----------------------------------------
+Task 5: Ready
+----------------------------------------
+Task 5: Finished
+
+Task 5: SUCCESS
+component   : erreur (pid=2824)
+start   time: Mon Aug 17 16:24:00 2020
+              (1597674240.646074)
+nprocs = 2
+host 0 ymlvm 127.0.1.1
+host 1 ymlvm 127.0.1.1
+end     time: Mon Aug 17 16:24:00 2020
+              (1597674240.741869)
+elasped time: 0.095795
+elasped time body: 0.094902
+
+----------------------------------------
+Task 6: Ready
+----------------------------------------
+Task 6: Finished
+
+Task 6: SUCCESS
+component   : init (pid=2824)
+start   time: Mon Aug 17 16:24:00 2020
+              (1597674240.823940)
+nprocs = 2
+host 0 ymlvm 127.0.1.1
+host 1 ymlvm 127.0.1.1
+end     time: Mon Aug 17 16:24:01 2020
+              (1597674241.757982)
+elasped time: 0.934042
+elasped time body: 0.013017
+
+----------------------------------------
+Task 7: Ready
+----------------------------------------
+Task 7: Finished
+
+Task 7: SUCCESS
+component   : krylov (pid=2824)
+start   time: Mon Aug 17 16:24:01 2020
+              (1597674241.912287)
+nprocs = 2
+host 0 ymlvm 127.0.1.1
+host 1 ymlvm 127.0.1.1
+end     time: Mon Aug 17 16:24:03 2020
+              (1597674243.235249)
+elasped time: 1.322962
+elasped time body: 0.394741
+
+----------------------------------------
+Task 8: Ready
+----------------------------------------
+Task 8: Finished
+
+Task 8: SUCCESS
+component   : sousEspace (pid=2833)
+start   time: Mon Aug 17 16:24:03 2020
+              (1597674243.277813)
+nprocs = 1
+host 0 ymlvm 127.0.1.1
+end     time: Mon Aug 17 16:24:03 2020
+              (1597674243.294055)
+elasped time: 0.016242
+elasped time body: 0.007340
+
+----------------------------------------
+Task 9: Ready
+----------------------------------------
+Task 9: Finished
+
+Task 9: SUCCESS
+component   : prodRitz (pid=2824)
+start   time: Mon Aug 17 16:24:03 2020
+              (1597674243.401954)
+nprocs = 2
+host 0 ymlvm 127.0.1.1
+host 1 ymlvm 127.0.1.1
+end     time: Mon Aug 17 16:24:03 2020
+              (1597674243.638413)
+elasped time: 0.236459
+elasped time body: 0.000059
+
+----------------------------------------
+Task 10: Ready
+----------------------------------------
+Task 10: Finished
+
+Task 10: SUCCESS
+component   : erreur (pid=2824)
+start   time: Mon Aug 17 16:24:03 2020
+              (1597674243.790443)
+nprocs = 2
+host 0 ymlvm 127.0.1.1
+host 1 ymlvm 127.0.1.1
+end     time: Mon Aug 17 16:24:03 2020
+              (1597674243.867513)
+elasped time: 0.077070
+elasped time body: 0.000972
+
+----------------------------------------
+Task 11: Ready
+----------------------------------------
+Task 11: Finished
+
+Task 11: SUCCESS
+component   : init (pid=2824)
+start   time: Mon Aug 17 16:24:03 2020
+              (1597674243.976436)
+nprocs = 2
+host 0 ymlvm 127.0.1.1
+host 1 ymlvm 127.0.1.1
+end     time: Mon Aug 17 16:24:03 2020
+              (1597674243.978444)
+elasped time: 0.002008
+elasped time body: 0.000037
+
+----------------------------------------
+Task 12: Ready
+----------------------------------------
+Task 12: Finished
+
+Task 12: SUCCESS
+component   : krylov (pid=2824)
+start   time: Mon Aug 17 16:24:04 2020
+              (1597674244.017682)
+nprocs = 2
+host 0 ymlvm 127.0.1.1
+host 1 ymlvm 127.0.1.1
+end     time: Mon Aug 17 16:24:04 2020
+              (1597674244.144826)
+elasped time: 0.127144
+elasped time body: 0.000158
+
+----------------------------------------
+Task 13: Ready
+----------------------------------------
+Task 13: Finished
+
+Task 13: SUCCESS
+component   : sousEspace (pid=2833)
+start   time: Mon Aug 17 16:24:04 2020
+              (1597674244.176205)
+nprocs = 1
+host 0 ymlvm 127.0.1.1
+end     time: Mon Aug 17 16:24:04 2020
+              (1597674244.176882)
+elasped time: 0.000677
+elasped time body: 0.000291
+
+----------------------------------------
+Task 14: Ready
+----------------------------------------
+Task 14: Finished
+
+Task 14: SUCCESS
+component   : prodRitz (pid=2824)
+start   time: Mon Aug 17 16:24:04 2020
+              (1597674244.319108)
+nprocs = 2
+host 0 ymlvm 127.0.1.1
+host 1 ymlvm 127.0.1.1
+end     time: Mon Aug 17 16:24:04 2020
+              (1597674244.323053)
+elasped time: 0.003945
+elasped time body: 0.000052
+
+----------------------------------------
+Task 15: Ready
+----------------------------------------
+Task 15: Finished
+
+Task 15: SUCCESS
+component   : erreur (pid=2824)
+start   time: Mon Aug 17 16:24:04 2020
+              (1597674244.404493)
+nprocs = 2
+host 0 ymlvm 127.0.1.1
+host 1 ymlvm 127.0.1.1
+end     time: Mon Aug 17 16:24:04 2020
+              (1597674244.406291)
+elasped time: 0.001798
+elasped time body: 0.001010
+
+----------------------------------------
+Task 16: Ready
+----------------------------------------
+Task 16: Finished
+
+Task 16: SUCCESS
+component   : init (pid=2824)
+start   time: Mon Aug 17 16:24:04 2020
+              (1597674244.453414)
+nprocs = 2
+host 0 ymlvm 127.0.1.1
+host 1 ymlvm 127.0.1.1
+end     time: Mon Aug 17 16:24:04 2020
+              (1597674244.492232)
+elasped time: 0.038818
+elasped time body: 0.000022
+
+----------------------------------------
+Task 17: Ready
+----------------------------------------
+Task 17: Finished
+
+Task 17: SUCCESS
+component   : krylov (pid=2824)
+start   time: Mon Aug 17 16:24:04 2020
+              (1597674244.531690)
+nprocs = 2
+host 0 ymlvm 127.0.1.1
+host 1 ymlvm 127.0.1.1
+end     time: Mon Aug 17 16:24:04 2020
+              (1597674244.533591)
+elasped time: 0.001901
+elasped time body: 0.000161
+
+----------------------------------------
+Task 18: Ready
+----------------------------------------
+Task 18: Finished
+
+Task 18: SUCCESS
+component   : sousEspace (pid=2833)
+start   time: Mon Aug 17 16:24:04 2020
+              (1597674244.590498)
+nprocs = 1
+host 0 ymlvm 127.0.1.1
+end     time: Mon Aug 17 16:24:04 2020
+              (1597674244.591115)
+elasped time: 0.000617
+elasped time body: 0.000198
+
+----------------------------------------
+Task 19: Ready
+----------------------------------------
+Task 19: Finished
+
+Task 19: SUCCESS
+component   : prodRitz (pid=2824)
+start   time: Mon Aug 17 16:24:04 2020
+              (1597674244.701573)
+nprocs = 2
+host 0 ymlvm 127.0.1.1
+host 1 ymlvm 127.0.1.1
+end     time: Mon Aug 17 16:24:04 2020
+              (1597674244.709331)
+elasped time: 0.007758
+elasped time body: 0.000052
+
+----------------------------------------
+Task 20: Ready
+----------------------------------------
+Task 20: Finished
+
+Task 20: SUCCESS
+component   : erreur (pid=2824)
+start   time: Mon Aug 17 16:24:04 2020
+              (1597674244.745835)
+nprocs = 2
+host 0 ymlvm 127.0.1.1
+host 1 ymlvm 127.0.1.1
+end     time: Mon Aug 17 16:24:04 2020
+              (1597674244.850846)
+elasped time: 0.105011
+elasped time body: 0.001343
+
+----------------------------------------
+Task 21: Ready
+----------------------------------------
+Task 21: Finished
+
+Task 21: SUCCESS
+component   : init (pid=2824)
+start   time: Mon Aug 17 16:24:04 2020
+              (1597674244.953257)
+nprocs = 2
+host 0 ymlvm 127.0.1.1
+host 1 ymlvm 127.0.1.1
+end     time: Mon Aug 17 16:24:04 2020
+              (1597674244.975054)
+elasped time: 0.021797
+elasped time body: 0.000026
+
+----------------------------------------
+Task 22: Ready
+----------------------------------------
+Task 22: Finished
+
+Task 22: SUCCESS
+component   : krylov (pid=2824)
+start   time: Mon Aug 17 16:24:05 2020
+              (1597674245.034416)
+nprocs = 2
+host 0 ymlvm 127.0.1.1
+host 1 ymlvm 127.0.1.1
+end     time: Mon Aug 17 16:24:05 2020
+              (1597674245.045190)
+elasped time: 0.010774
+elasped time body: 0.000170
+
+----------------------------------------
+Task 23: Ready
+----------------------------------------
+Task 23: Finished
+
+Task 23: SUCCESS
+component   : sousEspace (pid=2833)
+start   time: Mon Aug 17 16:24:05 2020
+              (1597674245.111689)
+nprocs = 1
+host 0 ymlvm 127.0.1.1
+end     time: Mon Aug 17 16:24:05 2020
+              (1597674245.115166)
+elasped time: 0.003477
+elasped time body: 0.002716
+
+----------------------------------------
+Task 24: Ready
+----------------------------------------
+Task 24: Finished
+
+Task 24: SUCCESS
+component   : prodRitz (pid=2824)
+start   time: Mon Aug 17 16:24:05 2020
+              (1597674245.259531)
+nprocs = 2
+host 0 ymlvm 127.0.1.1
+host 1 ymlvm 127.0.1.1
+end     time: Mon Aug 17 16:24:05 2020
+              (1597674245.387904)
+elasped time: 0.128373
+elasped time body: 0.000060
+
+----------------------------------------
+Task 25: Ready
+----------------------------------------
+Task 25: Finished
+
+Task 25: SUCCESS
+component   : erreur (pid=2824)
+start   time: Mon Aug 17 16:24:05 2020
+              (1597674245.421670)
+nprocs = 2
+host 0 ymlvm 127.0.1.1
+host 1 ymlvm 127.0.1.1
+end     time: Mon Aug 17 16:24:05 2020
+              (1597674245.427896)
+elasped time: 0.006226
+elasped time body: 0.002320
+
+----------------------------------------

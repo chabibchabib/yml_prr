@@ -1,0 +1,11 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<application name="test_init" >
+    <description ></description>
+    <params />
+
+    <graph >
+ 
+ compute init(A,x); 
+</graph>
+</application>

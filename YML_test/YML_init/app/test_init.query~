@@ -1,0 +1,7 @@
+<?xml version="1.0"?>
+<application name="test_init">
+<graph>
+
+compute init(A,x,);
+</graph>
+</application>

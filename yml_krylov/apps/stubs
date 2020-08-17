@@ -1,0 +1,6 @@
+test_kr_query_yapp_2 init /home/ymlusr/local/var/yml/dr/binaries/test_kr_query_yapp_2.rex
+test_kr_query_yapp_2 krylov /home/ymlusr/local/var/yml/dr/binaries/test_kr_query_yapp_2.rex
+test_kr_query_yapp_1 sousEspace /home/ymlusr/local/var/yml/dr/binaries/test_kr_query_yapp_1.rex
+test_kr_query_yapp_2 prodRitz /home/ymlusr/local/var/yml/dr/binaries/test_kr_query_yapp_2.rex
+test_kr_query_yapp_2 erreur /home/ymlusr/local/var/yml/dr/binaries/test_kr_query_yapp_2.rex
+

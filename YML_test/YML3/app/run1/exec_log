@@ -1,0 +1,16 @@
+Task 1: Ready
+----------------------------------------
+Task 1: Finished
+
+Task 1: SUCCESS
+component   : sousEspace (pid=28081)
+start   time: Fri Aug 14 13:17:52 2020
+              (1597403872.279638)
+nprocs = 1
+host 0 ymlvm 127.0.1.1
+end     time: Fri Aug 14 13:17:52 2020
+              (1597403872.473997)
+elasped time: 0.194359
+elasped time body: 0.150194
+
+----------------------------------------

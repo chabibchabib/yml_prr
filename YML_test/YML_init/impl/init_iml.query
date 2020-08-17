@@ -1,0 +1,53 @@
+<?xml version="1.0"?>
+<component type="impl" name="init" abstract="init">
+<impl lang="XMP" nodes="CPU:(1,2)">
+  <templates>
+    <template name="t" format="block,block" size="6,6"/>
+  </templates>
+  <distribute>
+    <param template="t" name="A(6,6)" align="[i][j]:(j,i)"/>
+    <param template="t" name="x(6)" align="[i]:(*,i)"/>
+
+  </distribute>		
+<header>
+<![CDATA[
+
+]]>
+</header>
+  <source>
+<![CDATA[
+int  n =6; 
+double sum=0; 
+	//INITIALIATION A
+  #pragma xmp loop (i,j) on t(j,i)
+  for (int i=0;i<n;i++){
+    for(int j=0;j<n;j++){
+	A[i][j]=0;
+	if(i==j) A[i][j]=1;
+	else if (j==i+1) A[i][j]=2;
+	else if (j==i-1) A[i][j]=-2;
+    	}
+  }
+
+	// Initialisation de res
+#pragma xmp loop (i) on t(j,i)
+  for (int i=0;i<n;i++){
+	x[i]=0;
+if(i==0) x[i]=1;
+}
+
+ //afffichage
+#pragma xmp task on _XMP_default_nodes(1,1)
+{
+for(int i=0;i<n;i++) printf("%f\t",x[i]);
+
+printf("\n");
+} // end task 
+	 
+
+]]>
+  </source>
+<footer />
+</impl>
+</component>
+

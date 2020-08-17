@@ -1,0 +1,11 @@
+<?xml version="1.0" ?>
+<component type="abstract" name="erreur"> 	
+<params>
+<param name="A" type="Matrix" mode="in" />
+<param name="vec" type="Matrix" mode="in" />
+<param name="res" type="Matrix" mode="in" />
+<param name="erreur" type="real" mode="out" />
+
+
+</params>
+</component>

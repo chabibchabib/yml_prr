@@ -1,0 +1,7 @@
+<?xml version="1.0"?>
+<application name="test2">
+<graph>
+
+compute erreur(A,vec,res,erreur);
+</graph>
+</application>

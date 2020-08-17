@@ -1,0 +1,9 @@
+<?xml version="1.0" ?>
+<component type="abstract" name="init"> 	
+<params>
+<param name="A" type="Matrix" mode="out" />
+<param name="x" type="vector" mode="out" />
+
+
+</params>
+</component>

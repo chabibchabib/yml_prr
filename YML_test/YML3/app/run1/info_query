@@ -1,0 +1,11 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<application name="test4" >
+    <description ></description>
+    <params />
+
+    <graph >
+ 
+ compute sousEspace(c,res); 
+</graph>
+</application>
